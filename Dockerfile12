@@ -1,0 +1,18 @@
+FROM ubuntu/apache2
+RUN mkdir /opt/test
+COPY src/*  /opt/test/src/
+WORKDIR /opt/test/src/
+RUN cp -rf *.html /var/www/html/
+RUN mkdir /opt/script
+#COPY t1.sh /opt/script
+WORKDIR /opt/script
+COPY t1.sh .
+RUN chmod +x /opt/script/t1.sh
+#RUN sh t1.sh
+CMD ["/bin/bash", "/opt/script/t1.sh", "-D", "FOREGROUND"]
+#COPY src/* /var/www/html/ 
+#cd /opt/test/src/
+
+#COPY src/* /var/www/html/
+#RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+#RUN apt-get update && apt-get upgrade -y

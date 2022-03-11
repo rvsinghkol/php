@@ -1,0 +1,23 @@
+version: '3.3'  
+services:
+    php-apache-environment:
+        container_name: php-apache
+        image: nginx
+        #build:
+        #    context: /root/php
+        #    dockerfile: Dockerfile
+            #depends_on:
+            #- db
+        volumes:
+            - /root/php/src:/var/www/html/
+        ports:
+            - 80:80      
+              #my-service:
+              #    network_mode: "host"   
+        deploy:
+            replicas: 2
+          
+                    
+                      
+
+
