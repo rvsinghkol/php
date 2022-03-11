@@ -11,7 +11,7 @@ pipeline{
       agent any
       steps{
         sh label: '', script: '''
-        cd /root/php
+        cd /var/lib/jenkins/workspace/docker
         docker-compose -f phpapache.yml up -d'''
       }
     }
