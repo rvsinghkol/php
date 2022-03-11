@@ -3,7 +3,7 @@ services:
     phpapache:
         container_name: php-apache
         build:
-            context: /root/php/
+            context: /var/lib/jenkins/workspace/docker
             dockerfile: Dockerfile
         volumes:
             - /root/php/src:/var/www/html/
